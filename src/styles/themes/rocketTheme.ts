@@ -1,6 +1,9 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const rocketTheme = extendTheme({
+  config: {
+    initialColorMode: "dark",
+  },
   styles: {
     global: {
       body: {
