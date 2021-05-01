@@ -46,8 +46,10 @@ export default function Home() {
         </Button>
       </Flex>
 
-      <Flex>
-        <Image src="/assets/mapa.svg" alt="Mapa ilustrado" />
+      <Flex
+        justifyContent="center"
+        bgGradient="radial(50% 48%, #402285, #121214)"
+      >
         <Image src="/assets/gps.svg" alt="GPS com uma pessoa ilustrados" />
       </Flex>
     </Container>
