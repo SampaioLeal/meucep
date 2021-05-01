@@ -5,6 +5,7 @@ import History from "./pages/History";
 import CEPInfo from "./pages/CEPInfo";
 import Home from "./pages/Home";
 import rocketTheme from "./styles/themes/rocketTheme";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/cep/:cep" component={CEPInfo} />
           <Route exact path="/historico" component={History} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </ChakraProvider>
