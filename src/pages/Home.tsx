@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Container, Flex, Text } from "@chakra-ui/layout";
-import React, { useState } from "react";
+import { useState } from "react";
 import CEPInput from "../components/CEPInput";
 
 export default function Home() {
