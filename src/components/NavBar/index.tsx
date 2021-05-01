@@ -6,7 +6,7 @@ export default function NavBar() {
     <Flex padding={5}>
       <Link to="/">
         <Text fontSize={20} fontWeight="bold">
-          Meu CEP
+          MeuCEP
         </Text>
       </Link>
 
