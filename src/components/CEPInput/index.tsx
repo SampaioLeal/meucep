@@ -29,6 +29,7 @@ export default function CEPInput(props: CEPInputProps) {
           placeholder="Digite um CEP"
           borderBottomRightRadius={props.borderBottomRightRadius}
           borderTopRightRadius={props.borderTopRightRadius}
+          bgColor="#363636"
         />
       )}
     </InputMask>

@@ -1,6 +1,5 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { Input } from "@chakra-ui/input";
 import { Container, Flex, Text } from "@chakra-ui/layout";
 import React, { useState } from "react";
 import CEPInput from "../components/CEPInput";
@@ -18,7 +17,8 @@ export default function Home() {
         MeuCEP
       </Text>
       <Text fontSize={18}>
-        Encontre informações de um determinado CEP como: cidade, estado e DDD.
+        Encontre informações de um determinado CEP (Código de Endereçamento
+        Postal).
       </Text>
 
       <Flex marginY="12">
@@ -33,12 +33,16 @@ export default function Home() {
           borderTopLeftRadius={0}
           // isLoading
           bgColor="#8257E6"
+          size="lg"
           _hover={{
             backgroundColor: "#6641bd",
           }}
-          size="lg"
+          _active={{
+            backgroundColor: "#4a2e8b",
+          }}
+          _focus={{}}
         >
-          Button
+          Pesquisar
         </Button>
       </Flex>
 
