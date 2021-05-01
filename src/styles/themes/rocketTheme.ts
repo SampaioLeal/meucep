@@ -7,10 +7,9 @@ const rocketTheme = extendTheme({
   styles: {
     global: {
       body: {
-        minWidth: "100vw",
-        minHeight: "100vh",
-        backgroundImage:
-          "radial-gradient(39.11% 39.11% at 50% 60.89%, #402285 0%, #121214 100%)",
+        minWidth: "100%",
+        minHeight: "100%",
+        backgroundColor: "#121214",
       },
     },
   },
