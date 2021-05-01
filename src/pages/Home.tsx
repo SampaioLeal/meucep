@@ -2,8 +2,16 @@ import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Input } from "@chakra-ui/input";
 import { Container, Flex, Text } from "@chakra-ui/layout";
+import React, { useState } from "react";
+import CEPInput from "../components/CEPInput";
 
 export default function Home() {
+  const [cep, setCEP] = useState("");
+
+  function handleCEPChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setCEP(e.target.value);
+  }
+
   return (
     <Container textAlign="center">
       <Text fontWeight="bold" fontSize={54}>
@@ -14,15 +22,11 @@ export default function Home() {
       </Text>
 
       <Flex marginY="12">
-        <Input
-          // isInvalid
-          focusBorderColor="#8257E6"
-          errorBorderColor="crimson"
-          variant="filled"
-          size="lg"
-          placeholder="Digite um CEP"
+        <CEPInput
           borderBottomRightRadius={0}
           borderTopRightRadius={0}
+          value={cep}
+          onChange={handleCEPChange}
         />
         <Button
           borderBottomLeftRadius={0}
