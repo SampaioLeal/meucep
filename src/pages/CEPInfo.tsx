@@ -45,7 +45,7 @@ export default function CEPInfo() {
         {cep}
       </Text>
 
-      <Wrap justify="center" marginY="12" spacing={4}>
+      <Wrap justify={{ sm: "start", md: "center" }} marginY="12" spacing={4}>
         <WrapItem>
           {cepInfo ? (
             <CEPDetail title="Cidade" value={cepInfo.city} />
