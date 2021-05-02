@@ -1,5 +1,3 @@
-// import { darken } from "@chakra-ui/theme-tools";
-
 export const TextStyles = {
   baseStyle: {},
   sizes: {},

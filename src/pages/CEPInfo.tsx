@@ -1,8 +1,9 @@
-import { Box, Container, Flex, Text, Wrap, WrapItem } from "@chakra-ui/layout";
+import { Container, Flex, Text, Wrap, WrapItem } from "@chakra-ui/layout";
 import { Skeleton } from "@chakra-ui/skeleton";
 import { useToast } from "@chakra-ui/toast";
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router";
+import CEPDetail from "../components/CEPDetail";
 import CEPInput from "../components/CEPInput";
 import { getCEPInfo } from "../services/cep";
 
@@ -16,7 +17,7 @@ export default function CEPInfo() {
   const location = useLocation<CEPInfo>();
   const [cepInfo, setCEPInfo] = useState<CEPInfo | null>(null);
 
-  async function getCEP() {
+  async function sync() {
     try {
       const cepInfo = await getCEPInfo(cep);
 
@@ -34,7 +35,7 @@ export default function CEPInfo() {
     if (location.state) {
       setCEPInfo(location.state);
     } else {
-      getCEP();
+      sync();
     }
   }, []);
 
@@ -43,21 +44,11 @@ export default function CEPInfo() {
       <Text variant="title" textAlign="center">
         {cep}
       </Text>
+
       <Wrap justify="center" marginY="12" spacing={4}>
         <WrapItem>
           {cepInfo ? (
-            <Box
-              textAlign="start"
-              bg="#1E2023"
-              borderRadius={10}
-              w="100%"
-              p={4}
-            >
-              <Text fontWeight="bold" color="primary" variant="description">
-                Cidade
-              </Text>
-              <Text variant="detail">{cepInfo?.city || "-"}</Text>
-            </Box>
+            <CEPDetail title="Cidade" value={cepInfo.city} />
           ) : (
             <Skeleton height="100px" width="140px" />
           )}
@@ -65,18 +56,7 @@ export default function CEPInfo() {
 
         <WrapItem>
           {cepInfo ? (
-            <Box
-              textAlign="start"
-              bg="#1E2023"
-              borderRadius={10}
-              w="100%"
-              p={4}
-            >
-              <Text fontWeight="bold" color="primary" variant="description">
-                Estado
-              </Text>
-              <Text variant="detail">{cepInfo?.uf || "-"}</Text>
-            </Box>
+            <CEPDetail title="Estado" value={cepInfo.uf} />
           ) : (
             <Skeleton height="100px" width="140px" />
           )}
@@ -84,18 +64,7 @@ export default function CEPInfo() {
 
         <WrapItem>
           {cepInfo ? (
-            <Box
-              textAlign="start"
-              bg="#1E2023"
-              borderRadius={10}
-              w="100%"
-              p={4}
-            >
-              <Text fontWeight="bold" color="primary" variant="description">
-                Bairro
-              </Text>
-              <Text variant="detail">{cepInfo?.district || "-"}</Text>
-            </Box>
+            <CEPDetail title="Bairro" value={cepInfo.district} />
           ) : (
             <Skeleton height="100px" width="140px" />
           )}
@@ -103,18 +72,7 @@ export default function CEPInfo() {
 
         <WrapItem>
           {cepInfo ? (
-            <Box
-              textAlign="start"
-              bg="#1E2023"
-              borderRadius={10}
-              w="100%"
-              p={4}
-            >
-              <Text fontWeight="bold" color="primary" variant="description">
-                Logradouro
-              </Text>
-              <Text variant="detail">{cepInfo?.publicPlace || "-"}</Text>
-            </Box>
+            <CEPDetail title="Logradouro" value={cepInfo.publicPlace} />
           ) : (
             <Skeleton height="100px" width="140px" />
           )}
@@ -122,18 +80,7 @@ export default function CEPInfo() {
 
         <WrapItem>
           {cepInfo ? (
-            <Box
-              textAlign="start"
-              bg="#1E2023"
-              borderRadius={10}
-              w="100%"
-              p={4}
-            >
-              <Text fontWeight="bold" color="primary" variant="description">
-                Complemento
-              </Text>
-              <Text variant="detail">{cepInfo?.complement || "-"}</Text>
-            </Box>
+            <CEPDetail title="Complemento" value={cepInfo.complement} />
           ) : (
             <Skeleton height="100px" width="140px" />
           )}
@@ -141,18 +88,7 @@ export default function CEPInfo() {
 
         <WrapItem>
           {cepInfo ? (
-            <Box
-              textAlign="start"
-              bg="#1E2023"
-              borderRadius={10}
-              w="100%"
-              p={4}
-            >
-              <Text fontWeight="bold" color="primary" variant="description">
-                DDD
-              </Text>
-              <Text variant="detail">{cepInfo?.ddd || "-"}</Text>
-            </Box>
+            <CEPDetail title="DDD" value={cepInfo.ddd} />
           ) : (
             <Skeleton height="100px" width="140px" />
           )}

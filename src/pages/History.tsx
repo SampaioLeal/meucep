@@ -1,15 +1,22 @@
-import { Image } from "@chakra-ui/image";
 import { Container, Text } from "@chakra-ui/layout";
-import { Skeleton } from "@chakra-ui/skeleton";
 import { useToast } from "@chakra-ui/toast";
 import { useEffect, useState } from "react";
+import EmptyHistory from "../components/EmptyHistory";
 import HistoryItem from "../components/HistoryItem";
+import HistorySkeleton from "../components/HistorySkeleton";
 import { getHistory } from "../services/cep";
 
 export default function History() {
   const toast = useToast();
   const [cepHistory, setHistory] = useState<CEPInfo[]>([]);
   const [isSearching, setIsSearching] = useState(true);
+  const HistoryItems = () => (
+    <>
+      {cepHistory.map((item) => (
+        <HistoryItem cepObj={item} key={item.cep} />
+      ))}
+    </>
+  );
 
   async function sync() {
     try {
@@ -36,25 +43,12 @@ export default function History() {
     <Container textAlign="center">
       <Text variant="title">CEPs Recentes</Text>
 
-      {cepHistory.length ? (
-        cepHistory.map((item) => <HistoryItem cepObj={item} key={item.cep} />)
+      {cepHistory.length > 0 ? (
+        <HistoryItems />
       ) : isSearching ? (
-        <>
-          <Skeleton height="100px" width="100%" my={2} />
-          <Skeleton height="100px" width="100%" my={2} />
-          <Skeleton height="100px" width="100%" my={2} />
-        </>
+        <HistorySkeleton />
       ) : (
-        <>
-          <Image
-            marginY={4}
-            src="/assets/norecent.svg"
-            alt="Homem segurando caixa vazia"
-          />
-          <Text variant="description">
-            Não encontramos CEPs recém-pesquisados!
-          </Text>
-        </>
+        <EmptyHistory />
       )}
     </Container>
   );
