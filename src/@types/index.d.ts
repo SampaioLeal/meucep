@@ -6,5 +6,5 @@ interface CEPInfo {
   district?: string;
   publicPlace?: string;
   complement?: string;
-  ddd?: number;
+  ddd?: string;
 }

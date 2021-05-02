@@ -1,4 +1,4 @@
-import { Box, Container, Text, Wrap, WrapItem } from "@chakra-ui/layout";
+import { Box, Container, Flex, Text, Wrap, WrapItem } from "@chakra-ui/layout";
 import { Skeleton } from "@chakra-ui/skeleton";
 import { useToast } from "@chakra-ui/toast";
 import { useEffect, useState } from "react";
@@ -11,9 +11,9 @@ interface Params {
 }
 
 export default function CEPInfo() {
+  const toast = useToast();
   const { cep } = useParams<Params>();
   const location = useLocation<CEPInfo>();
-  const toast = useToast();
   const [cepInfo, setCEPInfo] = useState<CEPInfo | null>(null);
 
   async function getCEP() {
@@ -57,7 +57,7 @@ export default function CEPInfo() {
                 Cidade
               </Text>
               <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.city}
+                {cepInfo?.city || "-"}
               </Text>
             </Box>
           ) : (
@@ -78,7 +78,7 @@ export default function CEPInfo() {
                 Estado
               </Text>
               <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.uf}
+                {cepInfo?.uf || "-"}
               </Text>
             </Box>
           ) : (
@@ -99,7 +99,7 @@ export default function CEPInfo() {
                 Bairro
               </Text>
               <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.district}
+                {cepInfo?.district || "-"}
               </Text>
             </Box>
           ) : (
@@ -120,7 +120,7 @@ export default function CEPInfo() {
                 Logradouro
               </Text>
               <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.publicPlace}
+                {cepInfo?.publicPlace || "-"}
               </Text>
             </Box>
           ) : (
@@ -141,7 +141,7 @@ export default function CEPInfo() {
                 Complemento
               </Text>
               <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.complement}
+                {cepInfo?.complement || "-"}
               </Text>
             </Box>
           ) : (
@@ -162,7 +162,7 @@ export default function CEPInfo() {
                 DDD
               </Text>
               <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.ddd}
+                {cepInfo?.ddd || "-"}
               </Text>
             </Box>
           ) : (
@@ -176,7 +176,9 @@ export default function CEPInfo() {
           Não era o que estava procurando?
         </Text>
 
-        <CEPInput />
+        <Flex marginY={2}>
+          <CEPInput />
+        </Flex>
       </Container>
     </Container>
   );

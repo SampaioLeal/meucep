@@ -1,6 +1,5 @@
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
-import { Flex } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import { useState } from "react";
 import InputMask from "react-input-mask";
@@ -39,7 +38,7 @@ export default function CEPInput() {
   }
 
   return (
-    <Flex marginY={2}>
+    <>
       <InputMask
         mask="99999-999"
         value={cep}
@@ -51,7 +50,6 @@ export default function CEPInput() {
             {...inputProps}
             borderBottomRightRadius={0}
             borderTopRightRadius={0}
-            // isInvalid={props.error}
             focusBorderColor="#8257E6"
             errorBorderColor="crimson"
             variant="filled"
@@ -78,6 +76,6 @@ export default function CEPInput() {
       >
         Pesquisar
       </Button>
-    </Flex>
+    </>
   );
 }

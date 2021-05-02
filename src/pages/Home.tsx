@@ -13,7 +13,9 @@ export default function Home() {
         Postal).
       </Text>
 
-      <CEPInput />
+      <Flex marginY={10}>
+        <CEPInput />
+      </Flex>
 
       <Flex
         justifyContent="center"

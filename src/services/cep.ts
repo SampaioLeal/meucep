@@ -5,3 +5,9 @@ export async function getCEPInfo(cep: string) {
 
   return response.data;
 }
+
+export async function getHistory() {
+  const response = await api.get(`/history`);
+
+  return response.data;
+}
