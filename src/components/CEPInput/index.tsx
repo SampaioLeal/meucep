@@ -47,30 +47,21 @@ export default function CEPInput() {
       >
         {(inputProps: unknown) => (
           <Input
+            variant="primary"
             {...inputProps}
             borderBottomRightRadius={0}
             borderTopRightRadius={0}
-            focusBorderColor="#8257E6"
-            errorBorderColor="crimson"
-            variant="filled"
             size="lg"
             placeholder="Digite um CEP"
-            bgColor="#363636"
           />
         )}
       </InputMask>
       <Button
+        variant="primary"
         borderBottomLeftRadius={0}
         borderTopLeftRadius={0}
         isLoading={isLoading}
-        bgColor="#8257E6"
         size="lg"
-        _hover={{
-          backgroundColor: "#6641bd",
-        }}
-        _active={{
-          backgroundColor: "#4a2e8b",
-        }}
         _focus={{}}
         onClick={handleSearch}
       >

@@ -34,9 +34,7 @@ export default function History() {
 
   return (
     <Container textAlign="center">
-      <Text fontWeight="bold" fontSize={54}>
-        CEPs Recentes
-      </Text>
+      <Text variant="title">CEPs Recentes</Text>
 
       {cepHistory.length ? (
         cepHistory.map((item) => <HistoryItem cepObj={item} key={item.cep} />)
@@ -53,7 +51,9 @@ export default function History() {
             src="/assets/norecent.svg"
             alt="Homem segurando caixa vazia"
           />
-          <Text fontSize={18}>Não encontramos CEPs recém-pesquisados!</Text>
+          <Text variant="description">
+            Não encontramos CEPs recém-pesquisados!
+          </Text>
         </>
       )}
     </Container>

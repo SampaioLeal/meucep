@@ -31,12 +31,10 @@ export default function HistoryItem({ cepObj }: HistoryItemProps) {
         transform: "scale(1.02)",
       }}
     >
-      <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+      <Text fontWeight="bold" color="primary" variant="description">
         {cepObj.city} - {cepObj.uf}
       </Text>
-      <Text fontWeight="bold" fontSize={30}>
-        {cepObj.cep}
-      </Text>
+      <Text variant="detail">{cepObj.cep}</Text>
     </Box>
   );
 }

@@ -5,10 +5,8 @@ import CEPInput from "../components/CEPInput";
 export default function Home() {
   return (
     <Container textAlign="center">
-      <Text fontWeight="bold" fontSize={54}>
-        MeuCEP
-      </Text>
-      <Text fontSize={18}>
+      <Text variant="title">MeuCEP</Text>
+      <Text variant="description">
         Encontre informações de um determinado CEP (Código de Endereçamento
         Postal).
       </Text>

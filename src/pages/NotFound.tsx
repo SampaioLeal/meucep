@@ -4,9 +4,7 @@ import { Container, Flex, Text } from "@chakra-ui/layout";
 export default function NotFound() {
   return (
     <Container textAlign="center" maxW="container.md">
-      <Text fontWeight="bold" fontSize={54}>
-        MeuCEP
-      </Text>
+      <Text variant="title">MeuCEP</Text>
 
       <Flex
         justifyContent="center"

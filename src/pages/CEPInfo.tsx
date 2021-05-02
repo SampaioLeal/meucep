@@ -40,7 +40,7 @@ export default function CEPInfo() {
 
   return (
     <Container maxW="container.lg">
-      <Text fontWeight="bold" fontSize={54} textAlign="center">
+      <Text variant="title" textAlign="center">
         {cep}
       </Text>
       <Wrap justify="center" marginY="12" spacing={4}>
@@ -53,12 +53,10 @@ export default function CEPInfo() {
               w="100%"
               p={4}
             >
-              <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+              <Text fontWeight="bold" color="primary" variant="description">
                 Cidade
               </Text>
-              <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.city || "-"}
-              </Text>
+              <Text variant="detail">{cepInfo?.city || "-"}</Text>
             </Box>
           ) : (
             <Skeleton height="100px" width="140px" />
@@ -74,12 +72,10 @@ export default function CEPInfo() {
               w="100%"
               p={4}
             >
-              <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+              <Text fontWeight="bold" color="primary" variant="description">
                 Estado
               </Text>
-              <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.uf || "-"}
-              </Text>
+              <Text variant="detail">{cepInfo?.uf || "-"}</Text>
             </Box>
           ) : (
             <Skeleton height="100px" width="140px" />
@@ -95,12 +91,10 @@ export default function CEPInfo() {
               w="100%"
               p={4}
             >
-              <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+              <Text fontWeight="bold" color="primary" variant="description">
                 Bairro
               </Text>
-              <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.district || "-"}
-              </Text>
+              <Text variant="detail">{cepInfo?.district || "-"}</Text>
             </Box>
           ) : (
             <Skeleton height="100px" width="140px" />
@@ -116,12 +110,10 @@ export default function CEPInfo() {
               w="100%"
               p={4}
             >
-              <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+              <Text fontWeight="bold" color="primary" variant="description">
                 Logradouro
               </Text>
-              <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.publicPlace || "-"}
-              </Text>
+              <Text variant="detail">{cepInfo?.publicPlace || "-"}</Text>
             </Box>
           ) : (
             <Skeleton height="100px" width="140px" />
@@ -137,12 +129,10 @@ export default function CEPInfo() {
               w="100%"
               p={4}
             >
-              <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+              <Text fontWeight="bold" color="primary" variant="description">
                 Complemento
               </Text>
-              <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.complement || "-"}
-              </Text>
+              <Text variant="detail">{cepInfo?.complement || "-"}</Text>
             </Box>
           ) : (
             <Skeleton height="100px" width="140px" />
@@ -158,12 +148,10 @@ export default function CEPInfo() {
               w="100%"
               p={4}
             >
-              <Text fontWeight="bold" color="#8257E6" fontSize={18}>
+              <Text fontWeight="bold" color="primary" variant="description">
                 DDD
               </Text>
-              <Text fontWeight="bold" fontSize={30}>
-                {cepInfo?.ddd || "-"}
-              </Text>
+              <Text variant="detail">{cepInfo?.ddd || "-"}</Text>
             </Box>
           ) : (
             <Skeleton height="100px" width="140px" />
@@ -172,7 +160,7 @@ export default function CEPInfo() {
       </Wrap>
 
       <Container>
-        <Text fontWeight="bold" fontSize={18}>
+        <Text fontWeight="bold" variant="description">
           Não era o que estava procurando?
         </Text>
 
