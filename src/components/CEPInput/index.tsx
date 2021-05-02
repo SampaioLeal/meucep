@@ -17,6 +17,14 @@ export default function CEPInput() {
   }
 
   async function handleSearch() {
+    if (cep.length !== 9) {
+      return toast({
+        title: `O CEP deve conter 8 números!`,
+        status: "warning",
+        isClosable: true,
+      });
+    }
+
     setIsLoading(true);
 
     try {
